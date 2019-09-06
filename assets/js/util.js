@@ -433,7 +433,7 @@
 		// Events.
 			$this
 				.on('submit', function() {
-
+					alert("Texto a mostrar");
 					$this.find('input[type=text],input[type=password],textarea')
 						.each(function(event) {
 
@@ -453,7 +453,7 @@
 
 				})
 				.on('reset', function(event) {
-
+					
 					event.preventDefault();
 
 					$this.find('select')
