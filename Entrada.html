@@ -1,0 +1,28 @@
+<header class="css-d92687">
+<h1 class="css-ing846">Programming PIC 18 using XC8 (MPLAB X) : Timers</h1>
+<div class="css-15z47vx">&nbsp;</div>
+<div class="css-1yltisf">&nbsp;</div>
+</header>
+<div class="css-429vn2">
+<div class="css-q7xgeq" role="main">
+<div id="RIL_container">
+<div id="RIL_body">
+<div id="RIL_less">
+<div lang="en">
+<p>Remember the first GPIO post where we used the function __delay_ms() function? That&rsquo;s a bad way to use delay. It will get the job done, but in a not so effective way. What happens when you call __delay_ms() function is, the controller will execute NOP() (which means No OPeration). But still NOP is an instruction, which means your controller is doing something, but nothing useful. If you can use that time to do some other operations, that will be awesome. If there are no operations to be done, at least put the controller to sleep, so that you will save some battery life.</p>
+<p>With XC (and with pervious C18) compiler, we have a header file called&nbsp;<strong><em>&ldquo;timers.h&rdquo;</em></strong>. The header timers.h gives us the functions to reduce the number of lines of code.&nbsp;<strong><u>I strongly suggest read the datasheet and compiler documentation</u></strong>.</p>
+<p>Since I am using PIC18F4550, there are 4 timers according the datasheet (from 0 &ndash; 3). I will be using Timer0 to blink a LED at 1Hz (on/off a second).</p>
+<p>I have the following functions to configure and run the timer using timers.h</p>
+<div>
+<pre>&nbsp;</pre>
+<div>void&nbsp;OpenTimer0 ( unsigned&nbsp;char&nbsp;config);&nbsp;void&nbsp;CloseTimer0 (void); unsigned&nbsp;int&nbsp;ReadTimer0 (void);&nbsp;void&nbsp;WriteTimer0 ( unsigned&nbsp;int&nbsp;timer0);</div>
+</div>
+<p>Step 1: Configure Timer0 (fill the config variable with settings)</p>
+<p>Step 2: Enable interrupts (yes, we like to create an interrupt when timer reaches the limit)</p>
+<p>Step 3: Configure the interrupt and start running the program</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
