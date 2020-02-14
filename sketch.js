@@ -11,7 +11,7 @@ const N = 600;
 let painters = [N];
 
 function preload(){
-    img = loadImage("images/uku.jpg");
+    img = loadImage("images/ukulele.jpg");
 }
 
 function mousePressed(){
